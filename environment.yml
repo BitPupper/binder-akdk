@@ -1,4 +1,4 @@
-name: example-environment
+name: mrc-environment
 channels:
   - conda-forge
 dependencies:
@@ -11,3 +11,4 @@ dependencies:
   - partd
   - bokeh
   - dask
+  - plotly
