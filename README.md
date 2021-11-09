@@ -1,4 +1,4 @@
-# Conda environment with environment.yml
+# Jupyter notebook runnable online (for MR club)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BitPupper/my-binder/master?urlpath=https%3A%2F%2Fgithub.com%2FBitPupper%2Fmy-binder%2Fblob%2Fmaster%2Fmain.ipynb)
 
