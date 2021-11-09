@@ -1,13 +1,14 @@
 # Jupyter notebook runnable online via Binder (for MR club)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BitPupper/my-binder/master?labpath=https%3A%2F%2Fgithub.com%2FBitPupper%2Fmy-binder%2Fblob%2Fmaster%2Fmain.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BitPupper/my-binder/master)
 
 Access this Binder by clicking the blue badge above or at the following URL:
 
-https://mybinder.org/v2/gh/BitPupper/my-binder/master?labpath=https%3A%2F%2Fgithub.com%2FBitPupper%2Fmy-binder%2Fblob%2Fmaster%2Fmain.ipynb
+https://mybinder.org/v2/gh/BitPupper/my-binder/master
 
-(NOTE: once you are redirected to JupyterLab, you may get an error saying the path was not found. Just click off of it and access the file manually by clicking the folder icon on the left bar and selecting the 'main.ipynb' file. Everything will be fine. ...I think.)
+Once you are redirected to JupyterLab, click the folder icon on the left bar and select the 'main.ipynb' file. That is where the main code is. Feel free to edit the code and play around with it. Edits won't change the source code, so don't worry about messing anything up.
 
-Binder is prone to server errors from my experience, so if you can't access the file with any of the links, try again after waiting a few minutes.
+If the links fail, try going to https://mybinder.org/ and inserting the following information in the fields:
+![Screenshot 2021-11-09 at 10-23-29 The Binder Project](https://user-images.githubusercontent.com/38902034/140844944-ea9cc04b-56bd-42d0-a816-be092cd08d90.png)
 
-If all of the above fails, PM me and I'll try to figure it out. 
+Let me know if you encounter any errors.
