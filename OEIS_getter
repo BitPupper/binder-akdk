@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Dec 11 03:07:41 2020
+
+@author: Nono H
+
+API to fetch specified sequences from OEIS.
+"""
+
+# Import libraries
+import requests
+from PIL import Image
+import io
+import urllib3
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from bs4 import BeautifulSoup
+
+# Accesses the page the specified sequence is in and returns the entire text
+def request(seq_id):
+    # Set the URL you want to webscrape from        
+    url = 'https://oeis.org/search?fmt=text&q=id:<sequenceNumber>'
+    url = url.replace('<sequenceNumber>',seq_id)
+    
+    # Connect to the URL
+    response = requests.get(url)
+
+    # Parse HTML and saves to BeautifulSoup object
+    soup = BeautifulSoup(response.text, "html.parser")
+    return soup.get_text()
+
+# Extracts the sequence, cleans it, and returns it.
+def extract(text, seq_id):
+    seq = text[text.index("%S"):text.index("%N")] # Extracts sequence portion
+    seq = seq.replace('%S','').replace('%T','').replace('%U','').replace('%T','').replace(seq_id, '').replace(' ','').replace('\n', '')
+    return seq
+
+# Converts string sequence to int list
+def str_to_int(s):
+    s = s.rsplit(",")
+    nums = list()
+    #converts str input to int
+    for i in range(len(s)):
+        nums.append(int(s[i]))
+    return nums
+
+def show_plot(seq_id):
+    url = str.replace('https://oeis.org/<sequenceNumber>/graph?png=1', '<sequenceNumber>', seq_id)
+    response = requests.get(url)
+    image_bytes = io.BytesIO(response.content)
+    img = Image.open(image_bytes)
+    img.show()
+
+# Switch out methods if you prefer this one - only difference is showing plot
+# in matplotlib instead of image object
+# def show_plot(seq_id):
+#     # Set URL
+#     url = str.replace('https://oeis.org/<sequenceNumber>/graph?png=1', '<sequenceNumber>', seq_id)
+#     # Convert image to plot
+#     plot = plt.imread(url)
+#     plt.axis('off')
+#     plt.imshow(plot)
+#     plt.show()
+
+
+ID = input('Enter ID of sequence to fetch: ')
+
+#sequence = str_to_int(extract(request(ID),ID))
+print(str_to_int(extract(request(ID),ID)))
+
+show_plot(ID)
